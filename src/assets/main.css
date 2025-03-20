@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-purple: #8577ff;
+  --color-white: #fcf7f8;
+  --color-grey: #828e82;
+  --color-black: #020202;
+
+  --font-martian-mono: 'Martian Mono', 'monospace';
+  --font-inter: 'Inter', 'sans-serif';
+
+  --animate-loop-scroll: loop-scroll 200s linear infinite;
+  --animate-loop-fast-scroll: loop-scroll 100s linear infinite;
+  @keyframes loop-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+.paused {
+  animation-play-state: paused;
+}
