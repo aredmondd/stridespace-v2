@@ -112,7 +112,7 @@ const emotions = [
               </div>
             </div>
             <div>
-              <button @click="submitRun" class="bg-purple text-white px-2 py-1">generate</button>
+              <button @click="submitRun" class="bg-purple text-black px-3 py-2">generate</button>
             </div>
           </div>
         </div>
