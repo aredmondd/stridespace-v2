@@ -3,15 +3,14 @@ import { ref } from 'vue'
 
 const distance = ref(13)
 const time = ref(60)
-const measurement = ref('mi')
-const feeling = ref(null)
 const imageUrl = ref(null)
 const selectedEmotion = ref('neutral')
 
 const submitRun = async () => {
+  console.log(selectedEmotion.value)
   try {
     const response = await fetch(
-      `https://stridespace-art-generation.onrender.com/generate-art/?distance=${distance.value}&duration=${time.value}&emotion=${selectedEmotion.value || 'neutral'}`,
+      `http://localhost:8000/generate-art/?distance=${distance.value}&duration=${time.value}&emotion=${selectedEmotion.value || 'neutral'}`,
       {
         method: 'GET',
         headers: {
@@ -43,9 +42,9 @@ const emotions = [
 <template>
   <div class="flex items-center justify-center">
     <div class="flex">
-      <div class="border-2 p-48 text-2xl text-white/50 flex items-center justify-center">
-        <img v-if="imageUrl" :src="imageUrl" alt="Generated Run Image" class="max-w-full h-auto" />
-        <span v-else>?</span>
+      <div class="border-2 text-2xl text-white/50 flex items-center justify-center">
+        <img v-if="imageUrl" :src="imageUrl" alt="Generated Run Image" class="w-100" />
+        <span v-else class="p-48">?</span>
       </div>
       <div class="flex flex-col ml-20">
         <h1 class="text-4xl font-martian-mono text-purple">HOW WAS YOUR RUN?</h1>
