@@ -10,7 +10,7 @@ const submitRun = async () => {
   console.log(selectedEmotion.value)
   try {
     const response = await fetch(
-      `http://localhost:8000/generate-art/?distance=${distance.value}&duration=${time.value}&emotion=${selectedEmotion.value || 'neutral'}`,
+      `https://stridespace-art-generation.onrender.com/generate-art/?distance=${distance.value}&duration=${time.value}&emotion=${selectedEmotion.value || 'neutral'}`,
       {
         method: 'GET',
         headers: {
