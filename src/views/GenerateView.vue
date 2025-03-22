@@ -8,37 +8,26 @@ const selectedEmotion = ref('neutral')
 
 const submitRun = async () => {
   try {
-    const response = await fetch(
-      `https://stridespace-art-generation.onrender.com/generate-art/?distance=${distance.value}&duration=${time.value}&emotion=${selectedEmotion.value || 'neutral'}`,
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'cors', // ✅ Explicitly set CORS mode
-        credentials: 'include', // ✅ Include credentials if needed
-      },
-    )
+    const formData = new FormData()
+    formData.append('distance', distance.value)
+    formData.append('duration', time.value)
+    formData.append('emotion', selectedEmotion.value || 'neutral')
 
-    // ✅ Handle non-OK responses properly
+    const response = await fetch('https://stridespace-art-generation.onrender.com/generate-art', {
+      method: 'POST',
+      body: formData, // ✅ Use FormData for POST
+    })
+
     if (!response.ok) {
-      const errorText = await response.text()
-      throw new Error(`Failed with status: ${response.status} - ${errorText}`)
+      throw new Error(`Failed with status: ${response.status}`)
     }
 
-    // ✅ Check for CORS issues
-    const contentType = response.headers.get('Content-Type')
-    if (!contentType || !contentType.includes('image')) {
-      throw new Error('Invalid content type or CORS issue')
-    }
-
+    // ✅ Handle the image response as a blob
     const blob = await response.blob()
     imageUrl.value = URL.createObjectURL(blob)
+    console.log('Image generated successfully:', imageUrl.value)
   } catch (error) {
     console.error('Error generating image:', error)
-
-    // ✅ Display a user-friendly error message
-    alert('Failed to generate image. Please try again later.')
   }
 }
 
