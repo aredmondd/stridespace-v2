@@ -6,6 +6,12 @@
   --color-grey: #828e82;
   --color-black: #020202;
 
+  --color-vs-red: #f87683;
+  --color-vs-yellow: #ffab70;
+  --color-vs-blue: #79b8ff;
+  --color-vs-green: #35d058;
+  --color-vs-purple: #b392f0;
+
   --font-martian-mono: 'Martian Mono', 'monospace';
   --font-inter: 'Inter', 'sans-serif';
 
@@ -23,4 +29,16 @@
 
 .paused {
   animation-play-state: paused;
+}
+
+.v-enter-active {
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  transition-delay: var(--delay, 0ms);
+}
+
+.v-enter-from {
+  opacity: 0;
+  transform: translateY(48px);
 }

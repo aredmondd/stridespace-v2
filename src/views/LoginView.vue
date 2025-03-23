@@ -57,7 +57,7 @@ const handleLogin = async () => {
         {{ loading ? 'loading...' : 'login' }}
       </button>
     </form>
-    <p class="mt-12 text-white/50">
+    <p class="mt-12 text-white/33 text-sm sm:text-md">
       don't have an account? sign up
       <RouterLink to="/signup" class="underline underline-offset-2">here</RouterLink>
     </p>
