@@ -43,6 +43,7 @@ const isOpen = ref(false)
     <!-- Desktop Menu -->
     <div class="hidden md:flex border-r-1 border-white/15">
       <Link link="about" route="/about" />
+      <Link link="changelog" route="/changelog" />
       <Link link="generate" route="/generate" />
     </div>
 

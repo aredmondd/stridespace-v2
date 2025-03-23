@@ -108,20 +108,7 @@ import MarginBlock from '@/components/MarginBlock.vue'
       </p>
     </FAQ>
 
-    <FAQ title="6. what if i don't have strava?">
-      <p>
-        you can make custom art based on your runs by inputting your data yourself. don't lie - the
-        algorithm can tell when you're lying.
-      </p>
-    </FAQ>
-
-    <FAQ title="7. what if i don't want my art to be seen by others?">
-      <p>
-        in your profile's settings, you can ask for your art not to be uploaded to the mega art :)
-      </p>
-    </FAQ>
-
-    <FAQ title="8. my question/comment wasn't on here.">
+    <FAQ title="6. my question/comment wasn't on here.">
       <p>
         if you have more questions, you can email me at
         <a href="mailto:aidenredmondd@gmail.com" class="underline underline-offset-2"
