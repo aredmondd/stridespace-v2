@@ -30,7 +30,9 @@ const handleSignup = async () => {
 </script>
 
 <template>
-  <h1 class="font-martian-mono text-8xl mb-12 text-purple text-center">GET <br />STARTED</h1>
+  <h1 class="font-martian-mono text-5xl sm:text-8xl mb-12 text-purple text-center">
+    GET <br />STARTED
+  </h1>
   <div class="flex flex-col items-center justify-center">
     <form @submit.prevent="handleSignup" class="flex flex-col gap-4">
       <input

@@ -30,7 +30,7 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <h1 class="font-martian-mono text-9xl mb-12 text-purple text-center">LOGIN</h1>
+  <h1 class="font-martian-mono text-6xl sm:text-9xl mb-12 text-purple text-center">LOGIN</h1>
   <div class="flex flex-col items-center justify-center">
     <form @submit.prevent="handleLogin" class="flex flex-col gap-4">
       <input

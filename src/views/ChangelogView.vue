@@ -47,7 +47,7 @@ onMounted(fetchCommits)
 <template>
   <div class="flex flex-col flex-1">
     <div class="p-4">
-      <h1 class="text-purple font-martian-mono text-8xl text-center">CHANGELOG / ROADMAP</h1>
+      <h1 class="text-purple font-martian-mono text-8xl text-center">CHANGELOG + ROADMAP</h1>
     </div>
 
     <div class="border-t-1 border-white/15"></div>
@@ -119,6 +119,7 @@ onMounted(fetchCommits)
             <ToDoItem content="add friends" />
             <ToDoItem content="lifetime statistics" />
             <ToDoItem content="upload runs from strava" />
+            <ToDoItem content="mi to km support" />
           </ul>
         </div>
       </div>
