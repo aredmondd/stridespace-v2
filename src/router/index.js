@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '@/views/LoginView.vue'
 import GenerateView from '@/views/GenerateView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
+import ChangelogView from '@/views/ChangelogView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -26,6 +27,11 @@ const router = createRouter({
       path: '/generate',
       name: 'generate',
       component: GenerateView,
+    },
+    {
+      path: '/changelog',
+      name: 'changelog',
+      component: ChangelogView,
     },
     {
       path: '/:pathMatch(.*)*',

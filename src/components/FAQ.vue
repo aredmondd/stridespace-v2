@@ -10,7 +10,10 @@ let showItem = ref(false)
 
 <template>
   <div class="border-b border-white/15 p-4">
-    <h2 class="font-martian-mono text-2xl mb-2 cursor-pointer" @click="showItem = !showItem">
+    <h2
+      class="font-martian-mono text-2xl mb-2 cursor-pointer text-white/75"
+      @click="showItem = !showItem"
+    >
       {{ title }}
     </h2>
 
