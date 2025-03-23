@@ -13,7 +13,7 @@ const submitRun = async () => {
     formData.append('duration', time.value)
     formData.append('emotion', selectedEmotion.value || 'neutral')
 
-    const response = await fetch('https://stridespace-art-generation.onrender.com/generate-art', {
+    const response = await fetch('http://127.0.0.1:8000/generate-art', {
       method: 'POST',
       body: formData, // ✅ Use FormData for POST
     })
@@ -42,10 +42,12 @@ const emotions = [
 
 <template>
   <div class="flex items-center justify-center">
-    <div class="flex">
-      <div class="border-2 text-2xl text-white/50 flex items-center justify-center">
-        <img v-if="imageUrl" :src="imageUrl" alt="Generated Run Image" class="w-100" />
-        <span v-else class="p-48">?</span>
+    <div class="flex flex-col sm:flex-row">
+      <div v-if="imageUrl" class="flex items-center justify-center w-50 sm:w-100">
+        <img :src="imageUrl" alt="Generated Run Image" />
+      </div>
+      <div v-else class="border-2 text-2xl text-white/50 flex items-center justify-center">
+        <span class="p-24 sm:p-48">?</span>
       </div>
       <div class="flex flex-col ml-20">
         <h1 class="text-4xl font-martian-mono text-purple">HOW WAS YOUR RUN?</h1>

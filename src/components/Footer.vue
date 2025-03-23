@@ -33,10 +33,10 @@ import { RouterLink } from 'vue-router'
   <div class="hidden sm:flex justify-between border-t-1 border-white/15 px-12">
     <RouterLink
       to="/"
-      class="pl-3 py-4 border-l-1 border-white/15 text-white font-martian-mono text-4xl sm:text-6xl hover:text-purple transition-colors duration-250 ease-in-out"
+      class="px-3 py-4 border-l-1 border-white/15 text-white font-martian-mono text-4xl sm:text-6xl hover:text-purple transition-colors duration-250 ease-in-out"
       >SS</RouterLink
     >
-    <div class="flex flex-col justify-center items-end gap-4 pr-3 border-r-1 border-white/15">
+    <div class="flex flex-col justify-center items-end gap-4 px-3 border-r-1 border-white/15">
       <div class="flex gap-4">
         <RouterLink
           to="/about"

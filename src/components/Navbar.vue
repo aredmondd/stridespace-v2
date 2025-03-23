@@ -10,12 +10,20 @@ const isOpen = ref(false)
   <div class="flex justify-between border-b-1 border-white/15 px-12">
     <RouterLink
       to="/"
-      class="px-3 py-4 border-x-1 border-white/15 text-white font-martian-mono text-5xl hover:text-purple transition-colors duration-250 ease-in-out"
+      class="hidden sm:block px-3 py-4 border-x-1 border-white/15 text-white font-martian-mono text-5xl hover:text-purple transition-colors duration-250 ease-in-out"
       >STRIDESPACE</RouterLink
+    >
+    <RouterLink
+      to="/"
+      class="block sm:hidden px-3 py-4 border-x-1 border-white/15 text-white font-martian-mono text-5xl hover:text-purple transition-colors duration-250 ease-in-out"
+      >SS</RouterLink
     >
 
     <!-- Mobile Menu Button -->
-    <button @click="isOpen = true" class="md:hidden text-white focus:outline-none">
+    <button
+      @click="isOpen = true"
+      class="md:hidden text-white focus:outline-none border-x-1 border-white/15 px-3"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-8 w-8"
