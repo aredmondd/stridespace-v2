@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 import MarginBlock from '../components/MarginBlock.vue'
+import ToDoItem from '@/components/ToDoItem.vue'
 
 const commits = ref([])
 
@@ -31,7 +32,7 @@ const fetchCommits = async () => {
     )
 
     // Format the commit dates
-    commits.value = res.data.slice(0, 10).map((commit) => ({
+    commits.value = res.data.slice(0, 5).map((commit) => ({
       ...commit,
       formattedDate: formatDate(commit.commit.author.date),
     }))
@@ -46,7 +47,7 @@ onMounted(fetchCommits)
 <template>
   <div class="flex flex-col flex-1">
     <div class="p-4">
-      <h1 class="text-purple font-martian-mono text-8xl text-center">CHANGELOG + ROADMAP</h1>
+      <h1 class="text-purple font-martian-mono text-8xl text-center">CHANGELOG / ROADMAP</h1>
     </div>
 
     <div class="border-t-1 border-white/15"></div>
@@ -54,14 +55,18 @@ onMounted(fetchCommits)
     <div class="border-t-1 border-white/15"></div>
 
     <div class="flex">
-      <div v-if="commits.length">
+      <div v-if="commits.length" class="border-r-1 border-white/15 sm:min-w-[800px]">
         <h1
-          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/15 p-4 border-r-1 text-center"
+          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/15 p-4 text-center"
         >
           RECENT COMMITS
         </h1>
         <div v-for="(commit, index) in commits" :key="index" class="border-b-1 border-white/15">
-          <div class="flex justify-between">
+          <div
+            class="flex justify-between transition-all duration-300"
+            :class="index === 0 ? 'bg-purple/20' : 'bg-transparent'"
+          >
+            <!-- Date -->
             <div
               class="flex flex-col gap-1 border-r-1 border-white/15 px-4 items-center justify-center"
             >
@@ -72,17 +77,25 @@ onMounted(fetchCommits)
                 {{ commits[index].formattedDate.split(' @')[1] }}
               </p>
             </div>
+
+            <!-- Commit Message -->
             <div class="flex flex-col flex-grow justify-center items-start p-4">
-              <h2 class="text-lg text-white font-martian-mono">
+              <h2 class="text-lg font-martian-mono">
                 {{ commit.commit.message }}
               </h2>
-              <a :href="commit.html_url" target="_blank" class="text-purple underline"
-                >View Commit</a
+              <a
+                :href="commit.html_url"
+                target="_blank"
+                class="underline"
+                :class="index === 0 ? 'text-purple/90' : 'text-purple/75'"
               >
+                view commit
+              </a>
             </div>
 
+            <!-- Author -->
             <div
-              class="flex flex-col gap-1 border-x-1 border-white/15 p-4 items-center justify-center"
+              class="flex flex-col gap-1 border-l-1 border-white/15 p-4 items-center justify-center"
             >
               <img :src="commit.author.avatar_url" alt="" class="rounded-full w-15" />
               <p class="text-white/50 text-xs">{{ commit.author.login }}</p>
@@ -93,12 +106,21 @@ onMounted(fetchCommits)
 
       <p v-else class="text-white/50 p-4">Loading commits...</p>
 
-      <div v-if="commits.length">
+      <div v-if="commits.length" class="flex-grow border-b-1 border-white/15">
         <h1
-          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/15 p-4 border-r-1 text-center"
+          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/15 p-4 text-center"
         >
-          TO IMPLEMENT
+          TO DO
         </h1>
+        <div class="flex items-center justify-center flex-grow">
+          <ul class="p-4 flex flex-col gap-2">
+            <ToDoItem content="setup mega art wall" />
+            <ToDoItem content="add art posting" />
+            <ToDoItem content="add friends" />
+            <ToDoItem content="lifetime statistics" />
+            <ToDoItem content="upload runs from strava" />
+          </ul>
+        </div>
       </div>
     </div>
   </div>

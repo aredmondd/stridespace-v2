@@ -4,6 +4,7 @@ import LoginView from '@/views/LoginView.vue'
 import GenerateView from '@/views/GenerateView.vue'
 import NotFoundView from '@/views/NotFoundView.vue'
 import ChangelogView from '@/views/ChangelogView.vue'
+import SignupView from '@/views/SignupView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -22,6 +23,11 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: LoginView,
+    },
+    {
+      path: '/signup',
+      name: 'signup',
+      component: SignupView,
     },
     {
       path: '/generate',

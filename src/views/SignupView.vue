@@ -8,18 +8,18 @@ const password = ref('')
 const loading = ref(false)
 const router = useRouter() // Import Vue Router
 
-const handleLogin = async () => {
+const handleSignup = async () => {
   try {
     loading.value = true
 
-    const { data, error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signUp({
       email: email.value,
       password: password.value,
     })
 
     if (error) throw error
 
-    // ✅ Redirect to /generate on successful login
+    // ✅ Redirect to /generate on successful signup
     router.push('/generate')
   } catch (error) {
     alert(error.message)
@@ -30,9 +30,9 @@ const handleLogin = async () => {
 </script>
 
 <template>
-  <h1 class="font-martian-mono text-9xl mb-12 text-purple text-center">LOGIN</h1>
+  <h1 class="font-martian-mono text-8xl mb-12 text-purple text-center">GET <br />STARTED</h1>
   <div class="flex flex-col items-center justify-center">
-    <form @submit.prevent="handleLogin" class="flex flex-col gap-4">
+    <form @submit.prevent="handleSignup" class="flex flex-col gap-4">
       <input
         type="email"
         v-model="email"
@@ -54,11 +54,11 @@ const handleLogin = async () => {
         :disabled="loading"
         class="border-1 border-white py-1 mt-6 hover:bg-purple hover:border-purple transition-colors duration-250 ease-in-out"
       >
-        {{ loading ? 'loading...' : 'login' }}
+        {{ loading ? 'Loading...' : 'signup' }}
       </button>
     </form>
     <p class="mt-12 text-white/50">
-      don't have an account? sign up
+      already have an account? login
       <RouterLink to="/signup" class="underline underline-offset-2">here</RouterLink>
     </p>
   </div>

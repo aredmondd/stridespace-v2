@@ -1,9 +1,17 @@
 <script setup>
 import { ref } from 'vue'
+import { RouterLink, useRouter } from 'vue-router'
 import Link from './NavLink.vue'
-import { RouterLink } from 'vue-router'
+import { userSession, logout } from '@/lib/authStore'
 
 const isOpen = ref(false)
+const router = useRouter()
+
+// ✅ Logout with redirection
+const handleLogout = async () => {
+  await logout()
+  router.push('/') // Redirect to index after logout
+}
 </script>
 
 <template>
@@ -44,7 +52,21 @@ const isOpen = ref(false)
     <div class="hidden md:flex border-r-1 border-white/15">
       <Link link="about" route="/about" />
       <Link link="changelog" route="/changelog" />
-      <Link link="generate" route="/generate" />
+
+      <!-- ✅ Conditionally render 'generate' or 'login' -->
+      <Link
+        :link="userSession ? 'generate' : 'login'"
+        :route="userSession ? '/generate' : '/login'"
+      />
+
+      <!-- ✅ Logout with redirect -->
+      <button
+        v-if="userSession"
+        @click="handleLogout"
+        class="flex items-center px-4 border-l-1 border-white/15 hover:text-purple transition-colors duration-250 ease-in-out hover:cursor-pointer"
+      >
+        logout
+      </button>
     </div>
 
     <!-- Full Screen Mobile Menu Modal -->
@@ -57,7 +79,15 @@ const isOpen = ref(false)
       </button>
       <div class="flex flex-col items-center gap-6">
         <Link link="about" route="/about" @click="isOpen = false" class="text-2xl" />
-        <Link link="login" route="/login" @click="isOpen = false" class="text-2xl" />
+        <Link
+          :link="userSession ? 'generate' : 'login'"
+          :route="userSession ? '/generate' : '/login'"
+          @click="isOpen = false"
+          class="text-2xl"
+        />
+
+        <!-- ✅ Mobile Logout with redirect -->
+        <button v-if="userSession" @click="handleLogout" class="text-2xl">logout</button>
       </div>
     </div>
   </div>

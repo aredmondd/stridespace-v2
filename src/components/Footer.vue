@@ -44,12 +44,17 @@ import { RouterLink } from 'vue-router'
           >login</RouterLink
         >
         <RouterLink
+          to="/signup"
+          class="flex items-center hover:text-purple transition-colors duration-250 ease-in-out hover:cursor-pointer"
+          >signup</RouterLink
+        >
+        <RouterLink
           to="/about"
           class="flex items-center hover:text-purple transition-colors duration-250 ease-in-out hover:cursor-pointer"
           >about</RouterLink
         >
         <RouterLink
-          to="/login"
+          to="/changelog"
           class="flex items-center hover:text-purple transition-colors duration-250 ease-in-out hover:cursor-pointer"
           >changelog</RouterLink
         >
@@ -59,11 +64,10 @@ import { RouterLink } from 'vue-router'
           class="font-inter hover:text-purple transition-colors duration-250 ease-in-out"
           >source code</a
         >
-        <a
-          href="https://github.com/aredmondd/stridespace"
-          target="_blank"
-          class="font-inter hover:text-purple transition-colors duration-250 ease-in-out"
-          >generate</a
+        <RouterLink
+          to="/generate"
+          class="flex items-center hover:text-purple transition-colors duration-250 ease-in-out hover:cursor-pointer"
+          >generate</RouterLink
         >
       </div>
       <p class="text-white/25 font-martian-mono text-sm">
