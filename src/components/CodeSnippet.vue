@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-4 mb-24 text-sm sm:text-lg">
+  <div class="flex flex-col gap-4 mb-36 text-sm sm:text-lg">
     <h2 class="font-martian-mono">
       noise_scale<span class="text-vs-red"> = </span> <span class="text-vs-blue">max(10</span>,
       <span class="text-vs-blue">int</span><span class="text-vs-yellow"> (</span

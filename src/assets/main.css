@@ -74,37 +74,6 @@
   transform: rotate(-45deg);
 }
 
-.mobile-arrow {
-  position: relative;
-  display: inline-block;
-  width: 6px; /* Vertical arrow */
-  height: 100px; /* Adjust height to define arrow size */
-  margin: 0 26px;
-  border-radius: 9999px;
-  background-color: #fcf7f8;
-}
-
-.mobile-arrow::before,
-.mobile-arrow::after {
-  content: '';
-  position: absolute;
-  left: calc(50% - 3px); /* Center horizontally */
-  bottom: 0;
-  width: 6px; /* Keep same width */
-  height: 45px; /* Adjust height */
-  border-radius: 9999px;
-  background-color: #fcf7f8;
-  transform-origin: 50% calc(100% - 3px);
-}
-
-.mobile-arrow::before {
-  transform: rotate(45deg);
-}
-
-.mobile-arrow::after {
-  transform: rotate(-45deg);
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.6s ease;
