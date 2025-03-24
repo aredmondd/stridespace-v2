@@ -42,3 +42,75 @@
   opacity: 0;
   transform: translateY(48px);
 }
+
+.arrow {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 6px;
+  margin: 26px 0;
+  border-radius: 9999px;
+  background-color: #fcf7f8;
+}
+
+.arrow::before,
+.arrow::after {
+  content: '';
+  position: absolute;
+  top: calc(50% - 3px);
+  right: 0;
+  width: 45px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: #fcf7f8;
+  transform-origin: calc(100% - 3px) 50%;
+}
+
+.arrow::before {
+  transform: rotate(45deg);
+}
+
+.arrow::after {
+  transform: rotate(-45deg);
+}
+
+.mobile-arrow {
+  position: relative;
+  display: inline-block;
+  width: 6px; /* Vertical arrow */
+  height: 100px; /* Adjust height to define arrow size */
+  margin: 0 26px;
+  border-radius: 9999px;
+  background-color: #fcf7f8;
+}
+
+.mobile-arrow::before,
+.mobile-arrow::after {
+  content: '';
+  position: absolute;
+  left: calc(50% - 3px); /* Center horizontally */
+  bottom: 0;
+  width: 6px; /* Keep same width */
+  height: 45px; /* Adjust height */
+  border-radius: 9999px;
+  background-color: #fcf7f8;
+  transform-origin: 50% calc(100% - 3px);
+}
+
+.mobile-arrow::before {
+  transform: rotate(45deg);
+}
+
+.mobile-arrow::after {
+  transform: rotate(-45deg);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.6s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
