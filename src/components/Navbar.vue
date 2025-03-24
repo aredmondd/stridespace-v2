@@ -78,16 +78,50 @@ const handleLogout = async () => {
         &times;
       </button>
       <div class="flex flex-col items-center gap-6">
-        <Link link="about" route="/about" @click="isOpen = false" class="text-2xl" />
-        <Link
-          :link="userSession ? 'generate' : 'login'"
-          :route="userSession ? '/generate' : '/login'"
+        <RouterLink
+          to="/login"
           @click="isOpen = false"
-          class="text-2xl"
-        />
+          class="text-2xl hover:text-purple duration-250 transition ease-in-out"
+          >login</RouterLink
+        >
+        <RouterLink
+          to="/about"
+          @click="isOpen = false"
+          class="text-2xl hover:text-purple duration-250 transition ease-in-out"
+          >about</RouterLink
+        >
+        <RouterLink
+          to="/changelog"
+          @click="isOpen = false"
+          class="text-2xl hover:text-purple duration-250 transition ease-in-out"
+          >changelog</RouterLink
+        >
+        <a
+          href="https://github.com/aredmondd/stridespace"
+          @click="isOpen = false"
+          class="text-2xl hover:text-purple duration-250 transition ease-in-out"
+          >source code</a
+        >
+        <RouterLink
+          to="/generate"
+          @click="isOpen = false"
+          class="text-2xl hover:text-purple duration-250 transition ease-in-out"
+          >generate</RouterLink
+        >
+        <RouterLink
+          to="/about"
+          @click="isOpen = false"
+          class="text-2xl hover:text-purple duration-250 transition ease-in-out"
+          >about</RouterLink
+        >
 
-        <!-- ✅ Mobile Logout with redirect -->
-        <button v-if="userSession" @click="handleLogout" class="text-2xl">logout</button>
+        <button
+          v-if="userSession"
+          @click="handleLogout"
+          class="text-2xl hover:text-purple duration-250 transition ease-in-out"
+        >
+          logout
+        </button>
       </div>
     </div>
   </div>
