@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <!-- desktop -->
-  <div class="flex sm:hidden justify-between border-t-1 border-white/15 px-12">
+  <div class="flex sm:hidden justify-between border-t-1 border-white/15 px-6 sm:px-12">
     <div class="flex flex-col justify-center items-end gap-4 p-4 border-x-1 border-white/15">
       <p class="text-white/25 font-martian-mono text-xs">
         all aspects of this website were designed and implemented by
@@ -19,7 +19,7 @@ import { RouterLink } from 'vue-router'
   </div>
 
   <!-- desktop -->
-  <div class="hidden sm:flex justify-between border-t-1 border-white/15 px-12">
+  <div class="hidden sm:flex justify-between border-t-1 border-white/15 px-6 sm:px-12">
     <RouterLink
       to="/"
       class="px-3 py-4 border-l-1 border-white/15 text-white font-martian-mono text-4xl sm:text-6xl hover:text-purple transition-colors duration-250 ease-in-out"

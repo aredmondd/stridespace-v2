@@ -15,7 +15,7 @@ const handleLogout = async () => {
 </script>
 
 <template>
-  <div class="flex justify-between border-b-1 border-white/15 px-12">
+  <div class="flex justify-between border-b-1 border-white/15 px-6 sm:px-12">
     <RouterLink
       to="/"
       class="hidden sm:block px-3 py-4 border-x-1 border-white/15 text-white font-martian-mono text-5xl hover:text-purple transition-colors duration-250 ease-in-out"
