@@ -9,7 +9,7 @@ let showItem = ref(false)
 </script>
 
 <template>
-  <div class="border-b border-white/15 p-4">
+  <div class="border-b border-white/20 p-4">
     <h2
       class="font-martian-mono text-2xl mb-2 cursor-pointer text-white/75"
       @click="showItem = !showItem"

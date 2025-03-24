@@ -4,9 +4,9 @@ import { RouterLink } from 'vue-router'
 
 <template>
   <!-- desktop -->
-  <div class="flex sm:hidden justify-between border-t-1 border-white/15 px-6 sm:px-12">
-    <div class="flex flex-col justify-center items-end gap-4 p-4 border-x-1 border-white/15">
-      <p class="text-white/25 font-martian-mono text-xs">
+  <div class="flex sm:hidden justify-between border-t-1 border-white/20 px-6 sm:px-12">
+    <div class="flex flex-col justify-center items-end gap-4 p-4 border-x-1 border-white/20">
+      <p class="text-white/33 font-martian-mono text-xs">
         all aspects of this website were designed and implemented by
         <a
           href="https://aidenredmond.com"
@@ -19,13 +19,13 @@ import { RouterLink } from 'vue-router'
   </div>
 
   <!-- desktop -->
-  <div class="hidden sm:flex justify-between border-t-1 border-white/15 px-6 sm:px-12">
+  <div class="hidden sm:flex justify-between border-t-1 border-white/20 px-6 sm:px-12">
     <RouterLink
       to="/"
-      class="px-3 py-4 border-l-1 border-white/15 text-white font-martian-mono text-4xl sm:text-6xl hover:text-purple transition-colors duration-250 ease-in-out"
+      class="px-3 py-4 border-l-1 border-white/20 text-white font-martian-mono text-4xl sm:text-6xl hover:text-purple transition-colors duration-250 ease-in-out"
       >SS</RouterLink
     >
-    <div class="flex flex-col justify-center items-end gap-4 px-3 border-r-1 border-white/15">
+    <div class="flex flex-col justify-center items-end gap-4 px-3 border-r-1 border-white/20">
       <div class="flex gap-4">
         <RouterLink
           to="/login"
@@ -59,7 +59,7 @@ import { RouterLink } from 'vue-router'
           >generate</RouterLink
         >
       </div>
-      <p class="text-white/25 font-martian-mono text-sm">
+      <p class="text-white/33 font-martian-mono text-sm">
         all aspects of this website were designed and implemented by
         <a
           href="https://aidenredmond.com"

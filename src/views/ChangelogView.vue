@@ -50,25 +50,25 @@ onMounted(fetchCommits)
       <h1 class="text-purple font-martian-mono text-8xl text-center">CHANGELOG + ROADMAP</h1>
     </div>
 
-    <div class="border-t-1 border-white/15"></div>
+    <div class="border-t-1 border-white/20"></div>
     <MarginBlock />
-    <div class="border-t-1 border-white/15"></div>
+    <div class="border-t-1 border-white/20"></div>
 
     <div class="flex">
-      <div v-if="commits.length" class="border-r-1 border-white/15 sm:min-w-[800px]">
+      <div v-if="commits.length" class="border-r-1 border-white/20 sm:min-w-[800px]">
         <h1
-          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/15 p-4 text-center"
+          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/20 p-4 text-center"
         >
           RECENT COMMITS
         </h1>
-        <div v-for="(commit, index) in commits" :key="index" class="border-b-1 border-white/15">
+        <div v-for="(commit, index) in commits" :key="index" class="border-b-1 border-white/20">
           <div
             class="flex justify-between transition-all duration-300"
             :class="index === 0 ? 'bg-purple/20' : 'bg-transparent'"
           >
             <!-- Date -->
             <div
-              class="flex flex-col gap-1 border-r-1 border-white/15 px-4 items-center justify-center"
+              class="flex flex-col gap-1 border-r-1 border-white/20 px-4 items-center justify-center"
             >
               <p class="text-white/50 text-3xl font-martian-mono">
                 {{ commits[index].formattedDate.split(' @')[0] }}
@@ -95,7 +95,7 @@ onMounted(fetchCommits)
 
             <!-- Author -->
             <div
-              class="flex flex-col gap-1 border-l-1 border-white/15 p-4 items-center justify-center"
+              class="flex flex-col gap-1 border-l-1 border-white/20 p-4 items-center justify-center"
             >
               <img :src="commit.author.avatar_url" alt="" class="rounded-full w-15" />
               <p class="text-white/50 text-xs">{{ commit.author.login }}</p>
@@ -106,9 +106,9 @@ onMounted(fetchCommits)
 
       <p v-else class="text-white/50 p-4">Loading commits...</p>
 
-      <div v-if="commits.length" class="flex-grow border-b-1 border-white/15">
+      <div v-if="commits.length" class="flex-grow border-b-1 border-white/20">
         <h1
-          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/15 p-4 text-center"
+          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/20 p-4 text-center"
         >
           TO DO
         </h1>

@@ -4,8 +4,8 @@ import MarginBlock from '@/components/MarginBlock.vue'
 </script>
 
 <template>
-  <div class="flex border-b-1 border-white/15">
-    <div class="flex flex-col border-white/15 p-4">
+  <div class="flex border-b-1 border-white/20">
+    <div class="flex flex-col border-white/20 p-4">
       <div class="flex shrink items-end">
         <div class="font-martian-mono text-purple text-8xl">ABOUT</div>
         <p class="opacity-25 ml-2 mb-1 text-sm">
@@ -17,7 +17,7 @@ import MarginBlock from '@/components/MarginBlock.vue'
         <div class="font-martian-mono text-purple text-8xl">STRIDESPACE</div>
       </div>
     </div>
-    <div class="border-l-1 border-white/15 flex grow gap-4 p-4">
+    <div class="border-l-1 border-white/20 flex grow gap-4 p-4">
       <img src="../assets/red_running_cropped.JPG" alt="" class="h-48 w-40 object-cover" />
       <div class="flex flex-col justify-between gap-4">
         <h3 class="opacity-50">hi, i'm aiden!</h3>
@@ -41,7 +41,7 @@ import MarginBlock from '@/components/MarginBlock.vue'
 
   <MarginBlock />
 
-  <div class="border-t-1 border-white/15">
+  <div class="border-t-1 border-white/20">
     <FAQ title="1. why is stridespace?">
       <p>
         i've been thinking about making generative art based on runs for a while now. <br />it just

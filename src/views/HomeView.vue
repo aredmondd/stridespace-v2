@@ -41,7 +41,7 @@ onBeforeUnmount(() => {
 
 <template>
   <MarginBlock class="hidden sm:block" />
-  <div class="border-t-1 border-white/15 hidden sm:block"></div>
+  <div class="border-t-1 border-white/20 hidden sm:block"></div>
   <div class="flex justify-center items-center mt-6 sm:mt-24 mb-12 sm:mb-36">
     <div class="flex flex-col">
       <Transition appear>
@@ -136,7 +136,7 @@ onBeforeUnmount(() => {
 
   <ContentScroller />
 
-  <div class="border-t-1 border-white/15"></div>
+  <div class="border-t-1 border-white/20"></div>
 
   <MarginBlock />
 </template>

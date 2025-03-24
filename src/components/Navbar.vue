@@ -15,22 +15,22 @@ const handleLogout = async () => {
 </script>
 
 <template>
-  <div class="flex justify-between border-b-1 border-white/15 px-6 sm:px-12">
+  <div class="flex justify-between border-b-1 border-white/20 px-6 sm:px-12">
     <RouterLink
       to="/"
-      class="hidden sm:block px-3 py-4 border-x-1 border-white/15 text-white font-martian-mono text-5xl hover:text-purple transition-colors duration-250 ease-in-out"
+      class="hidden sm:block px-3 py-4 border-x-1 border-white/20 text-white font-martian-mono text-5xl hover:text-purple transition-colors duration-250 ease-in-out"
       >STRIDESPACE</RouterLink
     >
     <RouterLink
       to="/"
-      class="block sm:hidden px-3 py-4 border-x-1 border-white/15 text-white font-martian-mono text-5xl hover:text-purple transition-colors duration-250 ease-in-out"
+      class="block sm:hidden px-3 py-4 border-x-1 border-white/20 text-white font-martian-mono text-5xl hover:text-purple transition-colors duration-250 ease-in-out"
       >SS</RouterLink
     >
 
     <!-- Mobile Menu Button -->
     <button
       @click="isOpen = true"
-      class="md:hidden text-white focus:outline-none border-x-1 border-white/15 px-3"
+      class="md:hidden text-white focus:outline-none border-x-1 border-white/20 px-3"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ const handleLogout = async () => {
     </button>
 
     <!-- Desktop Menu -->
-    <div class="hidden md:flex border-r-1 border-white/15">
+    <div class="hidden md:flex border-r-1 border-white/20">
       <Link link="about" route="/about" />
       <Link link="changelog" route="/changelog" />
 
@@ -63,7 +63,7 @@ const handleLogout = async () => {
       <button
         v-if="userSession"
         @click="handleLogout"
-        class="flex items-center px-4 border-l-1 border-white/15 hover:text-purple transition-colors duration-250 ease-in-out hover:cursor-pointer"
+        class="flex items-center px-4 border-l-1 border-white/20 hover:text-purple transition-colors duration-250 ease-in-out hover:cursor-pointer"
       >
         logout
       </button>
