@@ -5,17 +5,17 @@ import MarginBlock from '@/components/MarginBlock.vue'
 import CodeSnippet from '@/components/CodeSnippet.vue'
 import { RouterLink } from 'vue-router'
 
+import lightblue from '@/assets/art/lightblue.png'
+import greenred from '@/assets/art/greenred.png'
+import sick2 from '@/assets/art/sick_2.png'
+
 const examples = ref([
   { distance: '26.2mi', time: '4h 15m', feeling: 'very bad' },
   { distance: '2.5mi', time: '20m', feeling: 'good' },
   { distance: '8.9mi', time: '1h 10m', feeling: 'neutral' },
 ])
 
-const images = ref([
-  'src/assets/art/lightblue.png',
-  'src/assets/art/greenred.png',
-  'src/assets/art/sick_2.png',
-])
+const images = ref([lightblue, greenred, sick2])
 
 const currentIndex = ref(0)
 const currentExample = ref(examples.value[currentIndex.value])
