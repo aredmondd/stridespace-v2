@@ -15,14 +15,13 @@ const submitRun = async () => {
 
     const response = await fetch('http://127.0.0.1:8000/generate-art', {
       method: 'POST',
-      body: formData, // ✅ Use FormData for POST
+      body: formData,
     })
 
     if (!response.ok) {
       throw new Error(`Failed with status: ${response.status}`)
     }
 
-    // ✅ Handle the image response as a blob
     const blob = await response.blob()
     imageUrl.value = URL.createObjectURL(blob)
     console.log('Image generated successfully:', imageUrl.value)
@@ -42,15 +41,17 @@ const emotions = [
 
 <template>
   <div class="flex items-center justify-center">
-    <div class="flex flex-col sm:flex-row">
-      <div v-if="imageUrl" class="flex items-center justify-center w-50 sm:w-100">
+    <div class="flex flex-col sm:flex-row p-4 sm:p-0">
+      <div v-if="imageUrl" class="flex items-center justify-center w-70 sm:w-100">
         <img :src="imageUrl" alt="Generated Run Image" />
       </div>
       <div v-else class="border-2 text-2xl text-white/50 flex items-center justify-center">
-        <span class="p-24 sm:p-48">?</span>
+        <span class="p-35 sm:p-48">?</span>
       </div>
-      <div class="flex flex-col ml-20">
-        <h1 class="text-4xl font-martian-mono text-purple">HOW WAS YOUR RUN?</h1>
+      <div class="flex flex-col sm:ml-20 mt-12 sm:mt-0">
+        <h1 class="text-2xl sm:text-4xl font-martian-mono text-purple text-center">
+          HOW WAS YOUR RUN?
+        </h1>
 
         <div class="my-8">
           <div class="flex justify-between">
@@ -95,10 +96,10 @@ const emotions = [
         </div>
 
         <div class="my-8">
-          <div class="flex justify-between items-end">
+          <div class="flex flex-col sm:flex-row justify-between items-center sm:items-end">
             <div>
               <h2>how did it feel?</h2>
-              <div class="mt-2 flex gap-2">
+              <div class="mt-2 flex gap-4 sm:gap-2">
                 <span
                   v-for="emotion in emotions"
                   :key="emotion.name"
@@ -114,7 +115,9 @@ const emotions = [
               </div>
             </div>
             <div>
-              <button @click="submitRun" class="bg-purple text-black px-3 py-2">generate</button>
+              <button @click="submitRun" class="bg-purple text-black px-3 py-2 mt-6 sm:mt-0">
+                generate
+              </button>
             </div>
           </div>
         </div>

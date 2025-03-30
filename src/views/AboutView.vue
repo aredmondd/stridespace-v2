@@ -4,7 +4,7 @@ import MarginBlock from '@/components/MarginBlock.vue'
 </script>
 
 <template>
-  <div class="flex border-b-1 border-white/20">
+  <div class="border-b-1 border-white/20 hidden sm:flex">
     <div class="flex flex-col border-white/20 p-4">
       <div class="flex shrink items-end">
         <div class="font-martian-mono text-purple text-8xl">ABOUT</div>
@@ -17,6 +17,7 @@ import MarginBlock from '@/components/MarginBlock.vue'
         <div class="font-martian-mono text-purple text-8xl">STRIDESPACE</div>
       </div>
     </div>
+
     <div class="border-l-1 border-white/20 flex grow gap-4 p-4">
       <img src="../assets/red_running_cropped.JPG" alt="" class="h-48 w-40 object-cover" />
       <div class="flex flex-col justify-between gap-4">
@@ -39,26 +40,34 @@ import MarginBlock from '@/components/MarginBlock.vue'
     </div>
   </div>
 
+  <!-- mobile version -->
+  <div class="flex flex-col sm:hidden border-b-1 border-white/20">
+    <div class="flex flex-col items-center justify-center border-white/20 p-4">
+      <div class="font-martian-mono text-purple text-4xl">ABOUT</div>
+      <div class="font-martian-mono text-purple text-4xl">STRIDESPACE</div>
+    </div>
+  </div>
+
   <MarginBlock />
 
   <div class="border-t-1 border-white/20">
     <FAQ title="1. why is stridespace?">
-      <p>
+      <p class="text-sm">
         i've been thinking about making generative art based on runs for a while now. <br />it just
         so happened i had to make a website for a class.
       </p>
     </FAQ>
 
     <FAQ title="2. how was stridespace built?">
-      <p>
+      <p class="text-sm">
         stridespace was built, designed, and implemented by aiden redmond for ART3510 at florida
         southern college.
       </p>
-      <p>technically... stridespace was built using vue, tailwind, and python.</p>
+      <p class="text-sm">technically... stridespace was built using vue, tailwind, and python.</p>
     </FAQ>
 
     <FAQ title="3. why is everything in lower case or upper case?">
-      <p>
+      <p class="text-sm">
         i'm obsessed with consistency. mixed case tends to obstruct that consistency. that's also
         why the main font is
         <a
@@ -68,7 +77,7 @@ import MarginBlock from '@/components/MarginBlock.vue'
           >martian mono</a
         >.
       </p>
-      <p>
+      <p class="text-sm">
         see more about
         <a href="https://stephango.com/style" target="_blank" class="underline underline-offset-2"
           >consistent constraints</a
@@ -77,15 +86,15 @@ import MarginBlock from '@/components/MarginBlock.vue'
     </FAQ>
 
     <FAQ title="4. are you secretly judging my runs?">
-      <p>
+      <p class="text-sm">
         no. stridespace doesn't store ANY of your run's data on any server anywhere. your run is
         completely yours.
       </p>
     </FAQ>
 
     <FAQ title="5. you aren't making art. it's an algorithm.">
-      <p>i struggled with this alot. i actually partially agree.</p>
-      <p>
+      <p class="text-sm">i struggled with this alot. i actually partially agree.</p>
+      <p class="text-sm">
         read more about my dillema:
         <a
           href="https://en.wikipedia.org/wiki/Generative_art"
@@ -109,7 +118,7 @@ import MarginBlock from '@/components/MarginBlock.vue'
     </FAQ>
 
     <FAQ title="6. my question/comment wasn't on here.">
-      <p>
+      <p class="text-sm">
         if you have more questions, you can email me at
         <a href="mailto:aidenredmondd@gmail.com" class="underline underline-offset-2"
           >aidenredmondd@gmail.com</a

@@ -47,19 +47,21 @@ onMounted(fetchCommits)
 <template>
   <div class="flex flex-col flex-1">
     <div class="p-4">
-      <h1 class="text-purple font-martian-mono text-8xl text-center">CHANGELOG + ROADMAP</h1>
+      <h1 class="text-purple font-martian-mono text-5xl sm:text-8xl text-center">
+        CHANGELOG + ROADMAP
+      </h1>
     </div>
 
     <div class="border-t-1 border-white/20"></div>
     <MarginBlock />
     <div class="border-t-1 border-white/20"></div>
 
-    <div class="flex">
+    <div class="flex flex-col sm:flex-row">
       <div v-if="commits.length" class="border-r-1 border-white/20 sm:min-w-[800px]">
         <h1
-          class="text-white/75 font-martian-mono text-5xl border-b-1 border-white/20 p-4 text-center"
+          class="text-white/75 font-martian-mono text-3xl sm:text-5xl border-b-1 border-white/20 p-4 text-center"
         >
-          RECENT COMMITS
+          RECENT CHANGES
         </h1>
         <div v-for="(commit, index) in commits" :key="index" class="border-b-1 border-white/20">
           <div
@@ -68,9 +70,9 @@ onMounted(fetchCommits)
           >
             <!-- Date -->
             <div
-              class="flex flex-col gap-1 border-r-1 border-white/20 px-4 items-center justify-center"
+              class="flex flex-col gap-1 border-r-1 border-white/20 px-2 sm:px-4 items-center justify-center"
             >
-              <p class="text-white/50 text-3xl font-martian-mono">
+              <p class="text-white/50 text-2xl sm:text-3xl font-martian-mono">
                 {{ commits[index].formattedDate.split(' @')[0] }}
               </p>
               <p class="text-white/50 text-xs font-martian-mono">
@@ -79,14 +81,14 @@ onMounted(fetchCommits)
             </div>
 
             <!-- Commit Message -->
-            <div class="flex flex-col flex-grow justify-center items-start p-4">
-              <h2 class="text-lg font-martian-mono">
+            <div class="flex flex-col flex-grow justify-center items-start p-2 sm:p-4">
+              <h2 class="text-md sm:text-lg font-martian-mono">
                 {{ commit.commit.message }}
               </h2>
               <a
                 :href="commit.html_url"
                 target="_blank"
-                class="underline"
+                class="text-sm sm:text-md mt-1 underline"
                 :class="index === 0 ? 'text-purple/90' : 'text-purple/75'"
               >
                 view commit

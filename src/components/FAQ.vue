@@ -11,7 +11,7 @@ let showItem = ref(false)
 <template>
   <div class="border-b border-white/20 p-4">
     <h2
-      class="font-martian-mono text-2xl mb-2 cursor-pointer text-white/75"
+      class="font-martian-mono text-lg sm:text-2xl mb-2 cursor-pointer text-white/75"
       @click="showItem = !showItem"
     >
       {{ title }}
@@ -27,25 +27,3 @@ let showItem = ref(false)
     </Transition>
   </div>
 </template>
-
-<style scoped>
-/* Consistent fade and slide-in effect */
-.fade-slide-enter-active,
-.fade-slide-leave-active {
-  transition:
-    opacity 0.4s ease,
-    transform 0.2s ease;
-}
-
-.fade-slide-enter-from,
-.fade-slide-leave-to {
-  opacity: 0;
-  transform: translateY(-5px);
-}
-
-.fade-slide-enter-to,
-.fade-slide-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-}
-</style>

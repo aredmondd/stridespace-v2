@@ -108,12 +108,6 @@ const handleLogout = async () => {
           class="text-2xl hover:text-purple duration-250 transition ease-in-out"
           >generate</RouterLink
         >
-        <RouterLink
-          to="/about"
-          @click="isOpen = false"
-          class="text-2xl hover:text-purple duration-250 transition ease-in-out"
-          >about</RouterLink
-        >
 
         <button
           v-if="userSession"

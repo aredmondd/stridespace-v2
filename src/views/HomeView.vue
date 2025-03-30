@@ -70,7 +70,7 @@ onBeforeUnmount(() => {
   </div>
 
   <!-- ad #1 -->
-  <div class="mt-18 mb-36">
+  <div class="mt-18 mb-12 sm:mb-36">
     <h1 class="text-4xl sm:text-7xl font-martian-mono text-center mb-8 px-4">HOW DOES IT WORK?</h1>
     <p class="text-center mb-12 text-white/33 text-xs sm:text-lg px-12">
       enter your run's statistics, how you felt, and watch!
@@ -107,14 +107,14 @@ onBeforeUnmount(() => {
   </div>
 
   <!-- ad #2 -->
-  <div class="flex flex-col justify-center items-center mt-18 mb-12 sm:mb-36">
+  <div class="flex flex-col justify-center items-center mt-18 mb-6 sm:mb-36">
     <h1 class="text-4xl sm:text-7xl font-martian-mono mb-8 text-center">
       FULLY <span class="text-purple">OPEN SOURCE</span>
     </h1>
-    <p class="text-white/33 mb-1 text-center text-xs sm:text-lg px-8">
+    <p class="text-white/33 mb-1 text-center text-xs sm:text-lg px-16">
       designed with python & render. published on github.
     </p>
-    <p class="text-white/33 mb-12 text-center text-xs sm:text-lg px-8">
+    <p class="text-white/33 mb-12 text-center text-xs sm:text-lg sm:px-8">
       <a
         href="https://github.com/aredmondd/stridespace-v2"
         target="_blank"
